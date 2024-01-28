@@ -30,7 +30,7 @@ module.exports = {
         "chore",
       ],
     ],
-    "scope-enum": [2, "always", ["bo", "server", "siteapp", "site"]],
+    "scope-enum": [2, "always", ["bo", "site"]],
     "check-issue-number": [2, "always"],
   },
 };
