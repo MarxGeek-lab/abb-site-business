@@ -1,0 +1,52 @@
+@import "../globals/mixins.scss";
+@import "../globals/variables.scss";
+
+*,
+::after,
+::before {
+    margin: 0%;
+}
+
+body {
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(248, 248, 250);
+}
+
+section {
+    width: 90%;
+    margin: 5rem auto;
+
+    .sectionTitle {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--deep-brown);
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: var(--deep-brown);
+    }
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+@include desktop {
+    body {
+        margin: auto;
+        width: 1400px;
+    }
+}

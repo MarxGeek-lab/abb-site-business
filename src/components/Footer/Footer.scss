@@ -1,0 +1,65 @@
+@import "../../globals/mixins.scss";
+
+.FooterSite {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--orange);
+
+    @include small {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0 1rem;
+    }
+
+    &-textLeft {
+        font-size: 13px;
+        color: white;
+        margin-left: 1.5rem;
+    }
+
+    &-divRight {
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &-infos {
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-left: 2.5rem;
+
+        >svg {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+        >span {
+            font-size: 13px;
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &-btnContact {
+        padding: 6px 14px;
+        border-radius: 40px;
+        background: white;
+        color: var(--orange);
+        font-size: 15px;
+        margin-left: 2.5rem;
+        border: none;
+        white-space: nowrap;
+
+        @include small {
+            margin-left: 0%;
+            margin-bottom: 14px;
+        }
+    }
+}

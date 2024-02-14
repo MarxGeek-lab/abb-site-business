@@ -1,0 +1,162 @@
+@import "../../globals/mixins.scss";
+
+.HeaderSite {
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--orange);
+    position: relative;
+
+    @include tablet {
+        padding: 6px 0;
+    }
+
+    &-logoLink {
+        width: max-content;
+        margin-left: 1.5rem;
+
+        >a {
+            width: max-content;
+            position: relative;
+            display: flex;
+            align-items: end;
+
+            >b {
+                color: var(--orange);
+                font-size: 30px;
+                font-weight: 500;
+            }
+
+            >span {
+                color: var(--orange);
+                font-size: 18px;
+            }
+        }
+    }
+
+    &-menu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 1.5rem;
+        width: 60%;
+
+        @include desktop_md {
+            height: max-content;
+            align-items: start;
+            flex-direction: column;
+        }
+
+        >nav {
+            height: 100%;
+
+            >ul {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 0%;
+
+                >a {
+                    font-size: 13px;
+                    color: #03291F;
+                    margin: 0 1rem;
+                    white-space: nowrap;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                @include desktop_md {
+                    flex-direction: column;
+                    align-items: start;
+
+                    >a {
+                        margin: 6px 0%;
+                    }
+                }
+            }
+        }
+    }
+
+    &-divRight {
+        display: flex;
+
+        >button {
+            background: var(--orange);
+            border: 1px solid var(--orange) !important;
+
+            &:hover {
+                background: none !important;
+                color: var(--orange) !important;
+            }
+        }
+    }
+
+    &-contactNumber {
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 3rem;
+        background: var(--orange);
+        color: white;
+        font-size: 14px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &-mobileNavMenu {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        height: 100vh;
+        width: 0%;
+        overflow: hidden;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        padding-top: 12px;
+    }
+
+    &-closeNav {
+        position: absolute;
+        top: 0%;
+        right: 1rem;
+        font-size: 2rem;
+        color: rgb(52, 52, 52);
+        cursor: pointer;
+    }
+
+    &-iconMenu {
+        font-size: 1.5rem;
+        margin-right: 1.2rem;
+        display: none;
+
+        @include desktop_md {
+            display: block;
+        }
+    }
+}
+
+.hide {
+    @include desktop_md {
+        display: none;
+    }
+}
+
+.openMenu {
+    width: 100%;
+    padding-left: 12px;
+}
