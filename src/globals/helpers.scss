@@ -1,0 +1,161 @@
+@import "../globals/mixins.scss";
+
+.Container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1286px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include for-phone {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+
+
+.MainGrid {
+    display: grid;
+}
+
+.MainGrid4 {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include for-phone-and-tablet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include for-phone-landscape {
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include for-tablet-up {
+
+    .Span4Tablet {
+        @include for-phone-and-tablet {
+            grid-column-end: span 4;
+        }
+    }
+
+    .RowGap40 {
+        row-gap: 40px;
+    }
+
+    .Grid4,
+    .Grid6,
+    .Grid8,
+    .Grid9 {
+        column-gap: 21px;
+        display: grid;
+
+        &.rowGap21 {
+            row-gap: 21px;
+        }
+
+        &.rowGap30 {
+            row-gap: 30px;
+        }
+    }
+
+    .Gap6 {
+        gap: 6px;
+    }
+
+    .Gap20 {
+        gap: 20px;
+    }
+
+    .Gap40 {
+        gap: 40px;
+    }
+
+    .Gap52 {
+        gap: 52px;
+    }
+
+    .Grid4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .Grid6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .Grid8 {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .Grid9 {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .Span1 {
+        grid-column-end: span 1;
+    }
+
+    .Span2 {
+        grid-column-end: span 2;
+    }
+
+    .Span3 {
+        grid-column-end: span 3;
+    }
+
+    .Span4 {
+        grid-column-end: span 4;
+    }
+
+    .Span6 {
+        grid-column-end: span 6;
+
+        @include for-desktop {
+            &.desktop4 {
+                grid-column-end: span 4;
+            }
+        }
+    }
+
+    .Column7Span3 {
+        grid-column: 7 / span 3;
+
+        @include for-phone-and-tablet {
+            grid-column: 6 / span 4;
+        }
+    }
+
+    .Column4Span1 {
+        grid-column: 4 / span 1;
+    }
+
+    .Column1Span3 {
+        grid-column: 1 / span 3;
+    }
+
+    .Column2Span4 {
+        grid-column: 2 / span 4;
+    }
+
+    @include for-phone-and-tablet {
+        .Span4Tablet {
+            grid-column-end: span 4;
+        }
+
+        .Column1Span5Tablet {
+            grid-column: 1 / span 5;
+        }
+    }
+}
+
+
+@include for-phone {
+    .Mb {
+        margin-bottom: 0px;
+    }
+}
