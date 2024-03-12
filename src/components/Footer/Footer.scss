@@ -1,20 +1,14 @@
 @import "../../globals/mixins.scss";
+@import "../../globals/variables.scss";
 
 .FooterSite {
-    background: var(--orange-700);
-
-    @include for-phone {
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 0 1rem;
-    }
+    background: $orange;
 
     &-block {
         height: 70px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     &-textLeft {

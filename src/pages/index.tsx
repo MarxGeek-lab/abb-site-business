@@ -6,47 +6,43 @@ import Link from "next/link";
 import img from "../assets/images/t5.jpeg";
 import Image from "next/image";
 
-import prod from "../assets/images/t2.jpeg";
+import prod from "../assets/images/mil.jpg";
 import prod2 from "../assets/images/img1.jpeg";
-import { Button } from "primereact/button";
-import { FaWhatsapp } from "react-icons/fa6";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import slide1 from "../assets/images/agric.jpg";
+import slide2 from "../assets/images/agric2.jpg";
+import slide4 from "../assets/images/slide4.jpg";
+import BtnWhatsapp from "@/components/BtnWhatsapp/BtnWhatsapp";
 
 export default function Home() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true
+  };
+
   return (
     <RootLayout>
       <div className="HomePage">
-        <section className="HomePage-sectionOne SectionOne">
+        <section className="HomePage-sectionOne SectionOne mb-5">
+          <div className="HomePage-body">
           <h1 className="HomePage-title">
-            Bienvenu chez <strong>Abb.com</strong>
+              Bienvenu sur <strong>Abb.com</strong>
           </h1>
-          <p className="HomePage-subtitle">Profitez des merveille de notre univers</p>
-          <div className="HomePage-body"> </div>
-          <div className="HomePage-categoryActivity">
-            <Link href={""} className="HomePage-linkCategory">
-              <div className="HomePage-activityCard">
-                <Image src={img} alt="" />
-                <h3> Agriculture </h3>
-              </div>
-            </Link>
-            <Link href={""} className="HomePage-linkCategory">
-              <div className="HomePage-activityCard">
-                <Image src={img} alt="" />
-                <h3> Immobilier </h3>
-              </div>
-            </Link>
-            <Link href={""} className="HomePage-linkCategory">
-              <div className="HomePage-activityCard">
-                <Image src={img} alt="" />
-                <h3> Prêt à porter </h3>
-              </div>
-            </Link>
-            <Link href={""} className="HomePage-linkCategory">
-              <div className="HomePage-activityCard">
-                <Image src={img} alt="" />
-                <h3> Informatique </h3>
-              </div>
-            </Link>
+            <p className="HomePage-subtitle mb-6">Profitez des merveille de notre univers</p>
           </div>
+        <Slider className="HomePage-carousel" {...settings}>
+          <Image className="HomePage-imgSlide" src={slide1} alt="" />
+          <Image className="HomePage-imgSlide" src={slide2} alt="" />
+          <Image className="HomePage-imgSlide" src={slide4} alt="" />
+        </Slider>
         </section>
         <section className="HomePage-sectionTwo SectionTwo">
           <h2 className="HomePage-titleSection text-center">Nos Produits agricole</h2>
@@ -103,18 +99,11 @@ export default function Home() {
                 <Image className="Tile2-img" src={prod2} alt="" />
                 <div className="Tile2-footer mt-3">
                   <h4 className="Tile2-h1 mb-1">Product</h4>
-                  <h5 className="Tile2-category">Categorie</h5>
                   <b className="Tile2-price">
                     1200 <br />
                     <i>Fcfa</i>
                   </b>
-                  <Link
-                    href={`https://web.whatsapp.com/send?phone=${22969816413}&text=`}
-                    className="Tile2-btn w-full mt-5 flex gap-2"
-                  >
-                    <FaWhatsapp />
-                    Commander
-                  </Link>
+                  <BtnWhatsapp />
                 </div>
               </div>
             ))}

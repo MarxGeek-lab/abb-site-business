@@ -1,9 +1,10 @@
 @import "../../globals/mixins.scss";
+@import "../../globals/variables.scss";
 
 .HeaderSite {
     width: 100%;
     background: white;
-    border-bottom: 1px solid var(--orange);
+    border-bottom: 1px solid $orange;
     position: relative;
 
     @include for-phone-and-tablet {
@@ -33,13 +34,13 @@
     }
 
     &-title {
-        color: var(--orange);
+        color: $orange;
         font-size: 26px;
         font-weight: 500;
     }
 
     &-span {
-        color: var(--orange);
+        color: $orange;
         font-size: 18px;
     }
 
@@ -101,7 +102,7 @@
             bottom: 0px;
             height: 6px;
             width: 100%;
-            background-color: var(--orange);
+            background-color: $orange;
             display: none;
         }
 
@@ -131,12 +132,22 @@
     }
 
     &-btnSubscribe {
-        background: var(--orange) !important;
-        border: 1px solid var(--orange) !important;
+        background: $orange !important;
+        border: 1px solid $orange !important;
+
+        >a {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
         &:hover {
             background: none !important;
-            color: var(--orange) !important;
+            color: $orange !important;
+
+            >a {
+                color: $orange;
+            }
         }
 
         @include for-phone {
@@ -154,9 +165,10 @@
         justify-content: center;
         padding: 6px 1rem 6px 3rem;
         width: 30%;
-        background: var(--orange);
+        background: $orange;
         color: white;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 600;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
 
         @include for-phone-and-tablet {

@@ -8,6 +8,7 @@ import { CONTACT, HOME, PRODUCT_PAGE, REALESTATE_PAGE } from "../../settings/con
 import { FiMenu } from "react-icons/fi";
 import Head from "next/head";
 import Link from "next/link";
+import BtnWhatsapp from "../BtnWhatsapp/BtnWhatsapp";
 
 export const Header: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -85,8 +86,10 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
-        <Button className="HeaderSite-btnSubscribe" label="S'abonner" />
-        <div className="HeaderSite-contactNumber">00229 00 00 00 00 / 00 00 00 00</div>
+        <Button className="HeaderSite-btnSubscribe" >
+          <a href="https://wa.me/2347088366937" target="blank" className="flex flex-alignCenter">Nous écrire</a>
+        </Button>
+        <div className="HeaderSite-contactNumber">+229 69 49 55 54</div>
       </div>
     </header>
   );

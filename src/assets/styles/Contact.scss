@@ -1,0 +1,72 @@
+@import "../../globals/variables.scss";
+@import "../../globals/mixins.scss";
+
+
+.Cordonnee {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 3px;
+    border: 1px solid rgb(228, 228, 228);
+    flex-direction: column;
+
+    &-avatar {
+        font-size: 5rem;
+        color: $deep-brown;
+    }
+
+    &-nameCompany {
+        font-size: 30px; 
+        font-weight: 600;
+        color: $orange;
+        
+        &>i {
+            font-size: 20px;
+            color: black;
+            font-family: 'gabriela';
+        }
+    }
+
+    &-p {
+        margin: 18px 0;
+
+        &>svg {
+            fill: $deep-brown;
+            margin-right: 12px;
+            font-size: 20px;
+        }
+    }
+
+    &-h1 {
+        font-size: 30px;
+        font-weight: 600;
+        margin: 1.5rem 0;
+        text-transform: uppercase;
+    }
+    &-btnWhatsapp {
+        margin-top: 20px;
+        height: 50px;
+        background-color: rgb(1, 183, 65);
+        border-radius: 4px;
+        width: max-content;
+        text-transform: uppercase;
+
+        &>a {
+            display: flex;
+        align-items: center;
+        justify-content: center;
+            height: 100%;
+            color: $whitesmoke;
+            padding: 0 1.5rem;
+
+            &:visited {
+                color: $whitesmoke;
+            }
+
+            &>svg {
+                font-size: 1.6rem;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
