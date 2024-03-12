@@ -17,6 +17,7 @@ import slide1 from "../assets/images/agric.jpg";
 import slide2 from "../assets/images/agric2.jpg";
 import slide4 from "../assets/images/slide4.jpg";
 import BtnWhatsapp from "@/components/BtnWhatsapp/BtnWhatsapp";
+import { FiChevronRight } from "react-icons/fi";
 
 export default function Home() {
   const settings = {
@@ -90,6 +91,10 @@ export default function Home() {
               </div>
             </Link>
           </div>
+
+          <div className="SeeMoreDiv">
+            <a href="/products/agricole" className="SeeMore">Voir plus <FiChevronRight /></a>
+          </div>
         </section>
         <section className="HomePage-sectionThree SectionThree">
           <h2 className="HomePage-titleSection text-center">Prêt à porter</h2>
@@ -107,6 +112,9 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="SeeMoreDiv">
+            <a href="/products/pret-a-porter" className="SeeMore">Voir plus <FiChevronRight /></a>
           </div>
         </section>
       </div>
