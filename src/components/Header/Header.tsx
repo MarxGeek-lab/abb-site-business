@@ -74,12 +74,12 @@ export const Header: React.FC = () => {
               <Link href="/" className="HeaderSite-link">
                 Accueil
               </Link>
-              <Link href="/products/pret-a-porter" className="HeaderSite-link">
+              {/* <Link href="/products/pret-a-porter" className="HeaderSite-link">
                 Prêt à porter
               </Link>
               <Link href="/products/agricole" className="HeaderSite-link">
                 Produit agricole
-              </Link>
+              </Link> */}
               <Link href="/contact" className="HeaderSite-link">
                 Contact{" "}
               </Link>
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
           </nav>
         </div>
         <Button className="HeaderSite-btnSubscribe" >
-          <a href="https://wa.me/2347088366937" target="blank" className="flex flex-alignCenter">Nous écrire</a>
+          <a href="https://wa.me/22969495554" target="blank" className="flex flex-alignCenter">Nous écrire</a>
         </Button>
         <div className="HeaderSite-contactNumber">+229 69 49 55 54</div>
       </div>

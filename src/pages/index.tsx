@@ -1,25 +1,31 @@
 import RootLayout from "@/app/layout";
+import Image from "next/image";
+import Link from "next/link";
+import Slider from "react-slick";
+import { Dialog } from "primereact/dialog";
+import { useEffect, useState } from "react";
+import { Button } from "primereact/button";
 
 import "../assets/styles/Home.scss";
-import Link from "next/link";
-
-import img from "../assets/images/t5.jpeg";
-import Image from "next/image";
-
-import prod from "../assets/images/mil.jpg";
-import prod2 from "../assets/images/img1.jpeg";
-import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import slide1 from "../assets/images/agric.jpg";
 import slide2 from "../assets/images/agric2.jpg";
 import slide4 from "../assets/images/slide4.jpg";
-import BtnWhatsapp from "@/components/BtnWhatsapp/BtnWhatsapp";
-import { FiChevronRight } from "react-icons/fi";
+import haricatr from "@/assets/images/haricotRouge.webp";
+import haricotb from "@/assets/images/haricot2.webp";
+import mais from "@/assets/images/mais2.webp";
+import manioc from "@/assets/images/manioc2.webp";
+import anana from "@/assets/images/ananas.webp";
+import courge from "@/assets/images/courge.webp";
+import potirond from "@/assets/images/potirond.webp";
+import noix from "@/assets/images/noix.webp";
+import info_icon from "@/assets/images/information-6258.svg";
 
 export default function Home() {
+  const [visible, setVisible] = useState(false);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -29,8 +35,61 @@ export default function Home() {
     autoplay: true
   };
 
+  const agricole = [
+    {img: haricatr, libelle: "Haricot rouge"},
+    {img: haricotb, libelle: "Haricot blanc"},
+    {img: mais, libelle: "Maïs"},
+    {img: manioc, libelle: "Manioc"},
+    {img: anana, libelle: "Ananas"},
+    {img: courge, libelle: "Courge"},
+    {img: potirond, libelle: "Potirond"},
+    {img: noix, libelle: "Noix de palme"},
+  ]
+
+  const footerContent = (
+    <div>
+        <Button label="Ok" severity="warning" onClick={() => {
+          setVisible(false);
+          localStorage.setItem("dialog_info", "1");
+        }} autoFocus />
+    </div>
+  );
+
+  const header = (
+   <div>
+     <Image className="HomePage-imgSlide" src={info_icon} alt="" width={70} />
+      <h5>Informations</h5>
+   </div>
+  )
+
+  useEffect(() => {
+    let dialog = localStorage.getItem("dialog_info");
+
+    if (dialog) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+  }, []);
+  
   return (
     <RootLayout>
+      
+      <Dialog 
+        className="DialogInfos"
+        header={header} 
+        visible={visible} 
+        position={"top"}
+        onHide={() => setVisible(false)} 
+        footer={footerContent} draggable={false} resizable={false}>
+          <p className="m-0 text-sm Text">
+          Cher visiteur, pour des raisons de sécurité, nous vous encourageons à utiliser notre service 
+          client via WhatsApp pour toute commande ou achat de produits. 
+          Cliquez sur l'icône de WhatsApp pour discuter directement avec notre équipe. 
+          Nous pourrons ainsi discuter des détails du produit ainsi que des modalités 
+          de livraison après votre achat. <br /> Nous restons à votre disposition pour toute assistance supplémentaire.
+          </p>
+      </Dialog>
       <div className="HomePage">
         <section className="HomePage-sectionOne SectionOne mb-5">
           <div className="HomePage-body">
@@ -46,57 +105,23 @@ export default function Home() {
         </Slider>
         </section>
         <section className="HomePage-sectionTwo SectionTwo">
-          <h2 className="HomePage-titleSection text-center">Nos Produits agricole</h2>
+          <h2 className="HomePage-titleSection text-center">Nos Produits</h2>
           <div className="SectionTwo-blockProduct MainGrid4">
-            <Link href="" className="block Span1 Mb">
+            {agricole.map((list, index) => (
+              <Link href="" className="block Span1 Mb" key={index.toString()}>
               <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
+                <Image className="Tile1-img" src={list.img} alt="" />
+                <h4 className="Tile1-h1 text-center">{list.libelle}</h4>
               </div>
             </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
-            <Link href="" className="block Span1 Mb">
-              <div className="Tile1">
-                <Image className="Tile1-img" src={prod} alt="" />
-                <h4 className="Tile1-h1 text-center"> Product</h4>
-              </div>
-            </Link>
+            ))}
           </div>
 
-          <div className="SeeMoreDiv">
+          {/* <div className="SeeMoreDiv">
             <a href="/products/agricole" className="SeeMore">Voir plus <FiChevronRight /></a>
-          </div>
+          </div> */}
         </section>
-        <section className="HomePage-sectionThree SectionThree">
+        {/* <section className="HomePage-sectionThree SectionThree">
           <h2 className="HomePage-titleSection text-center">Prêt à porter</h2>
           <div className="SectionThree-blockProduct MainGrid4">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -116,7 +141,7 @@ export default function Home() {
           <div className="SeeMoreDiv">
             <a href="/products/pret-a-porter" className="SeeMore">Voir plus <FiChevronRight /></a>
           </div>
-        </section>
+        </section> */}
       </div>
     </RootLayout>
   );
