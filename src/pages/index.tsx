@@ -18,7 +18,7 @@ import haricotb from "@/assets/images/haricot2.webp";
 import mais from "../assets/images/maiis.jpg";
 import manioc from "../assets/images/manioc2.webp";
 import anana from "../assets/images/ananas.webp";
-import courge from "../assets/images/courge.webp";
+import courge from "../assets/images/courge.jpg";
 import potirond from "../assets/images/potirond.webp";
 import noix from "../assets/images/noix.webp";
 import info_icon from "../assets/images/information-6258.svg";
