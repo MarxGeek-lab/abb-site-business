@@ -15,13 +15,13 @@ import slide2 from "../assets/images/agric2.jpg";
 import slide4 from "../assets/images/slide4.jpg";
 import haricatr from "@/assets/images/haricotRouge.webp";
 import haricotb from "@/assets/images/haricot2.webp";
-import mais from "@/assets/images/mais2.webp";
-import manioc from "@/assets/images/manioc2.webp";
-import anana from "@/assets/images/ananas.webp";
-import courge from "@/assets/images/courge.webp";
-import potirond from "@/assets/images/potirond.webp";
-import noix from "@/assets/images/noix.webp";
-import info_icon from "@/assets/images/information-6258.svg";
+import mais from "../assets/images/mais2.webp";
+import manioc from "../assets/images/manioc2.webp";
+import anana from "../assets/images/ananas.webp";
+import courge from "../assets/images/courge.webp";
+import potirond from "../assets/images/potirond.webp";
+import noix from "../assets/images/noix.webp";
+import info_icon from "../assets/images/information-6258.svg";
 
 export default function Home() {
   const [visible, setVisible] = useState(false);
